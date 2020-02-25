@@ -22,23 +22,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // console.log(urlInput, topInput, bottomInput);
 
     var newDiv = document.createElement('div');
-    newDiv.style.width = '600px';
-    newDiv.style.minHeight = '400px';
     newDiv.className = 'meme-div';
 
-    newDiv.style.backgroundImage = `url(${urlInput})`;
-    newDiv.style.backgroundSize = '100%';
-    newDiv.style.backgroundRepeat = 'no-repeat';
+    var memeImage = document.createElement('img');
+    memeImage.classList.add('image');
+    memeImage.src = urlInput;
 
-    var topText = document.createElement('p');
+    // newDiv.style.backgroundImage = `url(${urlInput})`;
+
+    var topText = document.createElement('div');
+    topText.classList.add('topText');
     topText.innerText = topInput;
-    topText.className = 'topText';
     newDiv.append(topText);
 
-    var bottomText = document.createElement('p');
+    newDiv.appendChild(memeImage);
+
+    var bottomText = document.createElement('div');
+    bottomText.classList.add('bottomText');
     bottomText.innerText = bottomInput;
-    bottomText.className = 'bottomText';
     newDiv.append(bottomText);
+
+    var xDiv = document.createElement('div');
+    var xText = document.createElement('p');
+    xText.classList.add('x-p');
+    xText.innerText = 'X';
+
+    xDiv.classList.add('xDiv');
+    xDiv.append(xText);
+    newDiv.append(xDiv);
 
     article.appendChild(newDiv);
 
@@ -46,20 +57,20 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   //Hover Meme
-  article.addEventListener('mouseover', e => {
-    var clickedEl = e.target.className;
-    console.log(clickedEl);
+  // article.addEventListener('mouseover', e => {
+  //   var clickedEl = e.target.className;
+  //   console.log(clickedEl);
 
-    var hoverX = document.createElement('p');
-    hoverX.innerText = 'x';
-    hoverX.className = 'hoverX';
+  //   var hoverX = document.createElement('p');
+  //   hoverX.innerText = 'x';
+  //   hoverX.className = 'hoverX';
 
-    if (clickedEl === 'topText' || clickedEl === 'bottomText') {
-      e.target.parentNode.append(hoverX);
-    } else if (clickedEl === 'meme-div') {
-      clickedEl.appendChild(hoverX);
-    }
-  });
+  //   if (clickedEl === 'topText' || clickedEl === 'bottomText') {
+  //     e.target.parentNode.append(hoverX);
+  //   } else if (clickedEl === 'meme-div') {
+  //     clickedEl.appendChild(hoverX);
+  //   }
+  // });
 
   // article.addEventListener('mouseleave', e => {
   //   var clickedEl = e.target.className;

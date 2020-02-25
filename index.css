@@ -44,6 +44,7 @@ article {
 
 .meme-div {
   display: inline-block;
+  position: relative;
   margin-left: 1em;
   margin-right: 1em;
   padding: 0;
@@ -53,7 +54,57 @@ article {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   text-transform: uppercase;
+  width: 600px;
+  height: 400px;
+  /* background-size: 100%;
+  background-repeat: no-repeat; */
   background-color: red;
+}
+
+.topText {
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.bottomText {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: relative;
+}
+.x-p {
+  position: relative;
+  margin-top: 25%;
+  /* vertical-align: middle; */
+}
+
+.xDiv {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  z-index: -1;
+  /* background-color: blue; */
+}
+
+.image:hover {
+  z-index: -2;
 }
 
 .meme-div:hover {
@@ -73,14 +124,11 @@ article {
   -webkit-text-stroke-color: grey;
 }
 
-.meme-div p {
-}
-
-p {
+/* p {
   text-align: center;
   margin-top: 0;
   margin-bottom: 1rem;
-}
+} */
 
 button {
   padding: 10px;
@@ -98,8 +146,3 @@ h1 {
   margin: auto 0;
   text-align: center;
 }
-
-/* .img {
-  width: 600px;
-  min-height: 400px;
-} */
